@@ -1,0 +1,45 @@
+svg {
+    height: 100%;
+    width: 100%;
+    align-self: center;
+}
+
+  #dashed-circle {
+    animation: 100s linear infinite rotate;
+    transform-origin: 770.1651px 602.74658px;
+  }
+
+  @keyframes rotate {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+#crosses {
+    animation: moveDiagonal 50s linear infinite;
+}
+
+@keyframes moveDiagonal {
+    0% {
+        transform: translate(200px, -300px);
+    }
+    100% {
+        transform: translate(-700px, 600px);
+    }
+}
+
+#arrows {
+    animation: moveLeftToRight 50s linear infinite;
+}
+
+@keyframes moveLeftToRight {
+    0% {
+        transform: translate(-300px, 0);
+    }
+    100% {
+        transform: translate(1000px, 0);
+    }
+}
