@@ -1,23 +1,25 @@
+import { SvgIconComponent } from '@mui/icons-material'
+import { useState } from 'react'
+import { useTheme } from '@mui/material/styles'
 import AppBar from '@mui/material/AppBar'
+import BannerAbbreviated from '../../assets/banner_abbreviated.svg?react'
+import SquareLogo from '../../assets/square.svg?react'
+import Box from '@mui/material/Box'
+import ContactMailIcon from '@mui/icons-material/ContactMail'
+import Drawer from '@mui/material/Drawer'
+import GroupIcon from '@mui/icons-material/Group'
+import IconButton from '@mui/material/IconButton'
+import InfoIcon from '@mui/icons-material/Info'
+import ListItem from '@mui/material/ListItem'
+import ListItemButton from '@mui/material/ListItemButton'
+import ListItemIcon from '@mui/material/ListItemIcon'
+import ListItemText from '@mui/material/ListItemText'
+import MenuIcon from '@mui/icons-material/Menu'
+import MiscellaneousServicesIcon from '@mui/icons-material/MiscellaneousServices'
 import Stack from '@mui/material/Stack'
 import Typography from '@mui/material/Typography'
-import Box from '@mui/material/Box'
-import IconButton from '@mui/material/IconButton'
-import MenuIcon from '@mui/icons-material/Menu'
-import Drawer from '@mui/material/Drawer'
-import ListItem from '@mui/material/ListItem'
-import ListItemText from '@mui/material/ListItemText'
-import { useState } from 'react'
 import useMediaQuery from '@mui/material/useMediaQuery'
-import { useTheme } from '@mui/material/styles'
-import ListItemIcon from '@mui/material/ListItemIcon'
-import { SvgIconComponent } from '@mui/icons-material'
-import ListItemButton from '@mui/material/ListItemButton'
-import InfoIcon from '@mui/icons-material/Info';
-import PublicIcon from '@mui/icons-material/Public';
-import ConstructionIcon from '@mui/icons-material/Construction';
-import CallIcon from '@mui/icons-material/Call';
-import BannerAbbreviated from '../../assets/banner_abbreviated.svg?react'
+
 
 function NavListItem(
     { path, text, Icon }: {
@@ -118,34 +120,33 @@ export default function NavBar(): JSX.Element {
                             <Box sx={{ width: 250 }} onClick={handleDrawerToggle}>
                                 <NavListItem
                                     path='/'
-                                    text='Home'
-                                    Icon={PublicIcon}
+                                    text='Contact'
+                                    Icon={ContactMailIcon}
+                                />
+                                <NavListItem
+                                    path='/'
+                                    text='The Team'
+                                    Icon={GroupIcon}
                                 />
                                 <NavListItem
                                     path='/'
                                     text='Services'
-                                    Icon={ConstructionIcon}
+                                    Icon={MiscellaneousServicesIcon}
                                 />
                                 <NavListItem
                                     path='/'
                                     text='About'
                                     Icon={InfoIcon}
                                 />
-                                <NavListItem
-                                    path='/'
-                                    text='Contact'
-                                    Icon={CallIcon}
-                                />
                             </Box>
                         </Drawer>
-                        <Box sx={{ cursor: 'pointer' }}>
-                            <img
-                                alt='logo'
-                                src='banner_abberviated.svg'
-                                style={{
-                                    height: '4rem',
-                                    filter: 'invert(99%) sepia(24%) saturate(49%) hue-rotate(206deg) brightness(114%) contrast(92%)',
-                                }}
+                        <Box sx={{
+                            cursor: 'pointer',
+                            filter: 'invert(99%) sepia(24%) saturate(49%) hue-rotate(206deg) brightness(114%) contrast(100%)',
+                        }}>
+                            <SquareLogo
+                                height='4rem'
+                                width='4rem'
                             />
                         </Box>
                     </>
@@ -169,11 +170,12 @@ export default function NavBar(): JSX.Element {
                             borderRadius: '1rem',
                             padding: '1rem',
                         }}>
-                            <TextLink>Services</TextLink>
+                            <TextLink>Contact</TextLink>
                         </Box>
 
+                        <TextLink>The Team</TextLink>
+                        <TextLink>Services</TextLink>
                         <TextLink>About</TextLink>
-                        <TextLink>Contact</TextLink>
                     </Stack>
                 )}
             </Stack>
